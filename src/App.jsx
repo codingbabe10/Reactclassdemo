@@ -10,15 +10,22 @@ import FormPage from './pages/FormPage'
 import SocialPage from './pages/SocialPage'
 import LandingPage from './pages/LandingPage'
 import Login from './components/forms/Login'
+import { Route, Routes } from 'react-router-dom'
 
 export default function App() {
 
   return (
     <Container fluid data-bs-theme='dark' className='app'>
       <Header />
-      <FormPage>
-        <Register />
-      </FormPage> 
+      
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/login' element={<FormPage><Login /></FormPage>} />
+        <Route path='/register' element={<formPage><Register/></formPage>} />
+        <Route path='/register' element={<socialPage><Users/></socialPage>} />
+        <Route path='/register' element={<socialPage><Posts/></socialPage>} />
+      </Routes>
+
     </Container>
   )
 }
